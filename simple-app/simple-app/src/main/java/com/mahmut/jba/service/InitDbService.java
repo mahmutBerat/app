@@ -59,7 +59,9 @@ public class InitDbService {
 		blogJavavids.setUrl("http://www.google.com2"); //this should be rss feed
 		blogJavavids.setUser(userAdmin);
 		blogRepository.save(blogJavavids);
-
+		
+		System.out.println(blogJavavids);
+		
 		Item item1 = new Item();
 		item1.setTitle("first");
 		item1.setLink("http://www.google.com");
