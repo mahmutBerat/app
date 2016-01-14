@@ -39,11 +39,11 @@ public class InitDbService {
 	@PostConstruct
 	public void init() {
 		Role roleUser = new Role();
-		roleUser.setName("Role_User");
+		roleUser.setName("ROLE_USER");
 		roleRepository.save(roleUser);
 
 		Role roleAdmin = new Role();
-		roleAdmin.setName("Role_Admin");
+		roleAdmin.setName("ROLE_ADMIN");
 		roleRepository.save(roleAdmin);
 
 		User userAdmin = new User();
@@ -52,6 +52,11 @@ public class InitDbService {
 		roles.add(roleAdmin);
 		roles.add(roleUser);
 		userAdmin.setRoles(roles);
+		userRepository.save(userAdmin);
+		
+		User userNormal = new User();
+		userNormal.setName("yasin");
+		userNormal.setRoles(roles);
 		userRepository.save(userAdmin);
 		
 		Blog blogJavavids = new Blog();

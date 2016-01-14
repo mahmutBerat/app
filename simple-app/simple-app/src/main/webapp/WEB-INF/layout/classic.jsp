@@ -52,6 +52,7 @@
 						<li class="${current == 'blogs' ? 'active' : ' ' }"><a href='/simple-app/users'> Blogs</a></li>
 						<li class="${current == 'about' ? 'active' : ' ' }"><a href='/simple-app/users'> About</a></li>
 						<li class="${current == 'user-register' ? 'active' : ' ' }"><a href='/simple-app/user-register'> Register</a></li>
+						<li class="${current == 'login' ? 'active' : ' ' }"><a href='/simple-app/login.html'> Login</a></li>
 				</div>
 				<!--/.container-fluid -->
 		</nav>

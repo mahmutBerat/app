@@ -40,5 +40,5 @@
 	</bean>
 	
 	<jpa:repositories base-package="com.mahmut.jba.repository" />
-	
+	<import resource="security.xml"/>
 </beans>
