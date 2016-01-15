@@ -7,8 +7,8 @@
 		http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<http auto-config='true'>
-		<intercept-url pattern="/users" access="hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/users/" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/simple-app/users**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/simple-app/users/**" access="hasRole('ROLE_ADMIN')" />
 		<csrf disabled="true" />
 		<form-login login-page="/login.html" />
 	</http>
@@ -17,8 +17,6 @@
 		<authentication-provider>
 			<user-service>
 				<user name="admin" password="123" authorities="ROLE_USER, ROLE_ADMIN" />
-				<user name="yasin" password="123" authorities="ROLE_USER, ROLE_ADMIN" />
-
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>
