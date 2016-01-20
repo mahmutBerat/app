@@ -6,18 +6,29 @@
 		http://www.springframework.org/schema/security
 		http://www.springframework.org/schema/security/spring-security.xsd">
 
-	<http auto-config='true'>
-		<intercept-url pattern="/simple-app/users**" access="hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/simple-app/users/**" access="hasRole('ROLE_ADMIN')" />
-		<csrf disabled="true" />
+	<http use-expressions="true">
+		<intercept-url pattern="/users**" access="hasRole('ROLE_ADMIN')" />
+		<!-- <form-login/> -->
+		<intercept-url pattern="/users/**" access="hasRole('ROLE_ADMIN')" />
 		<form-login login-page="/login.html" />
+		<logout logout-url="/logout" />
+		<csrf disabled="true" />
 	</http>
 
 	<authentication-manager>
 		<authentication-provider>
-			<user-service>
-				<user name="admin" password="123" authorities="ROLE_USER, ROLE_ADMIN" />
-			</user-service>
+			<!-- <user-service> -->
+			<!-- <user name="admin" password="123" authorities="ROLE_USER, ROLE_ADMIN" 
+				/> -->
+			<!-- </user-service> -->
+			
+			<password-encoder hash="bcrypt"/>
+			<jdbc-user-service data-source-ref="dataSource"
+				authorities-by-username-query="select User.name, Role.name from User
+														join User_role on User.id = User_Role.users_id
+														join Role on User_Role.roles_id = Role.id
+														where User.name = ?"
+				users-by-username-query="select name,password,enabled from user where name = ?" />
 		</authentication-provider>
 	</authentication-manager>
 
