@@ -57,14 +57,20 @@
 							href='/simple-app/users'> Users</a></li>
 						<li class="${current == 'blogs' ? 'active' : ' ' }"><a
 							href='/simple-app/users'> Blogs</a></li>
-							<li class="${current == 'user-register' ? 'active' : ' ' }"><a
+						<security:authorize access="!isAuthenticated()">
+						<li class="${current == 'user-register' ? 'active' : ' ' }"><a
 								href='/simple-app/user-register'> Register</a></li>
+						</security:authorize>
 						<security:authorize access="!isAuthenticated()">
 							<li class="${current == 'login' ? 'active' : ' ' }"><a
 								href='/simple-app/login.html'> Login</a></li>
 						</security:authorize>
 						<security:authorize access="isAuthenticated()">
 							<li><a href='/simple-app/logout'> Logout</a></li>
+						</security:authorize>
+						<security:authorize access="isAuthenticated()">
+							<li class="${current == 'users' ? 'active' : ' ' }"><a
+								href='/simple-app/account'> My Account</a></li>
 						</security:authorize>
 				</div>
 				<!--/.container-fluid -->
