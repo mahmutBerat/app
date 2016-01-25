@@ -66,11 +66,11 @@
 								href='/simple-app/login.html'> Login</a></li>
 						</security:authorize>
 						<security:authorize access="isAuthenticated()">
-							<li><a href='/simple-app/logout'> Logout</a></li>
+							<li class="${current == 'account' ? 'active' : ' ' }"><a
+								href='/simple-app/account'> My Account</a></li>
 						</security:authorize>
 						<security:authorize access="isAuthenticated()">
-							<li class="${current == 'users' ? 'active' : ' ' }"><a
-								href='/simple-app/account'> My Account</a></li>
+							<li><a href='/simple-app/logout'> Logout</a></li>
 						</security:authorize>
 				</div>
 				<!--/.container-fluid -->
