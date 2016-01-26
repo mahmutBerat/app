@@ -10,7 +10,7 @@
 	<button type="button" class="btn btn-primary btn-lg"
 		data-toggle="modal" data-target="#myModal">New Blog</button>
 
-	<form commandName="blog" cssClass="form-horizontal" action='/simple-app/account' method="POST">
+	<form commandName="blog" cssClass="form-horizontal" method="POST">
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 			aria-labelledby="myModalLabel">
@@ -28,12 +28,12 @@
 						
 						<div class="form-group">
 <!-- 							<label for="name" class="col-sm-5 control-label">Title of the Blog</label> -->
-								<input type="text" path="name" class="form-control"  />
+								<input type="text" name="name" class="form-control"  />
 						</div>
 
 						<div class="form-group">
 <!-- 							<label for="name" class="col-sm-5 control-label">url</label> -->
-								<input type="text" path="url" class="form-control"   />
+								<input type="text" name="url" class="form-control"   />
 						</div>
 					
 					</div>

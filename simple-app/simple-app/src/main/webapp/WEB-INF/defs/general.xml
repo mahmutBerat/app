@@ -43,4 +43,10 @@
 		<put-attribute name="current" value="account"></put-attribute>
 	</definition>
 
+	<definition name="403" extends="common">
+		<put-attribute name="title" value="My Account" />
+		<put-attribute name="body" value="/WEB-INF/jsp/403.jsp" />
+		<put-attribute name="current" value="403"></put-attribute>
+	</definition>
+
 </tiles-definitions>
