@@ -20,7 +20,7 @@ public class LoginController {
 		ModelAndView model = new ModelAndView();
 		
 		if(user != null){
-			model.addObject("msg", "Hi " + user.getName()+ " you have not authorized for this page");
+			model.addObject("msg", "Hi, " + user.getName()+ " you have not authorized for this page");
 		}else
 			model.addObject("msg"+"You do not have permission to access this page!");
 		

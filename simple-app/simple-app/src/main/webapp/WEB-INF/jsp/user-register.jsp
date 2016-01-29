@@ -15,6 +15,7 @@
 		<div class="col-sm-10">
 			<form:input path="name"  cssClass="form-control" 
 				placeholder="Name"/>
+				<form:errors path="name"></form:errors>
 		</div>
 	</div>
 		<div class="form-group">
@@ -22,6 +23,7 @@
 		<div class="col-sm-10">
 			<form:input path="email" cssClass="form-control" 
 				placeholder="Email"/>
+				<form:errors path="email"></form:errors>
 		</div>
 	</div>
 		<div class="form-group">
@@ -29,6 +31,7 @@
 		<div class="col-sm-10">
 			<form:password path="password"  cssClass="form-control"
 				placeholder="Password"/>
+				<form:errors path="password"></form:errors>
 		</div>
 	</div>
 

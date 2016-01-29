@@ -29,11 +29,13 @@
 						<div class="form-group">
 <!-- 							<label for="name" class="col-sm-5 control-label">Title of the Blog</label> -->
 								<input type="text" name="name" class="form-control"  />
+								<form:errors path="name"></form:errors>
 						</div>
 
 						<div class="form-group">
 <!-- 							<label for="name" class="col-sm-5 control-label">url</label> -->
 								<input type="text" name="url" class="form-control"   />
+								<form:errors path="url"></form:errors>
 						</div>
 					
 					</div>

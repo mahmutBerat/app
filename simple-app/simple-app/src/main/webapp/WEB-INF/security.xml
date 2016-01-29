@@ -6,6 +6,9 @@
 		http://www.springframework.org/schema/security
 		http://www.springframework.org/schema/security/spring-security.xsd">
 
+
+	<global-method-security pre-post-annotations="enabled"></global-method-security>
+
 	<http use-expressions="true">
 		<access-denied-handler error-page="/jsp/403" />
 		<intercept-url pattern="/users**" access="hasRole('ROLE_ADMIN')" />
