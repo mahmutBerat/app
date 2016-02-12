@@ -21,6 +21,7 @@ public class Blog {
 	private Integer id;
 
 	@URL
+	@Size(min=1, message="Name must be at least 1 chars")
 	private String url;
 
 	@Size(min=1, message="Name must be at least 1 chars")

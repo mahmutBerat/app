@@ -38,36 +38,36 @@ public class UserController {
 		return new Blog();
 	}
 	
-	@RequestMapping(value="/users", method = RequestMethod.GET)
-	public String users(Model model){
-		model.addAttribute("users", userService.findAll() );
-		
-		return "users";
-	}
+//	@RequestMapping(value="/users", method = RequestMethod.GET)
+//	public String users(Model model){
+//		model.addAttribute("users", userService.findAll() );
+//		
+//		return "users";
+//	}
+//	
+//	@RequestMapping(value="/users/{id}", method= RequestMethod.GET)
+//	public String detail(Model model, @PathVariable int id )
+//	{
+//		model.addAttribute("user", userService.findOneWithBlogs(id));
+//		return "user-detail";
+//	}
 	
-	@RequestMapping(value="/users/{id}", method= RequestMethod.GET)
-	public String detail(Model model, @PathVariable int id )
-	{
-		model.addAttribute("user", userService.findOneWithBlogs(id));
-		return "user-detail";
-	}
-	
-	@RequestMapping(value="/user-register")
-	public String showRegister(Model model)
-	{
-		return "user-register";
-	}
-	
-	@RequestMapping(value="/user-register", method = RequestMethod.POST)
-	public String doRegister(@Valid @ModelAttribute("user") User user, BindingResult result)
-	{
-		if(result.hasErrors())
-		{
-			return "user-register";
-		}
-		userService.save(user);
-		return "redirect:/user-register?success=true";
-	}
+//	@RequestMapping(value="/user-register")
+//	public String showRegister(Model model)
+//	{
+//		return "user-register";
+//	}
+//	
+//	@RequestMapping(value="/user-register", method = RequestMethod.POST)
+//	public String doRegister(@Valid @ModelAttribute("user") User user, BindingResult result)
+//	{
+//		if(result.hasErrors())
+//		{
+//			return "user-register";
+//		}
+//		userService.save(user);
+//		return "redirect:/user-register?success=true";
+//	}
 	
 	@RequestMapping("/account")
 	public String account(Model model, Principal principal){
@@ -95,10 +95,10 @@ public class UserController {
 		return "redirect:/account.html";	
 	}
 	
-	@RequestMapping(value="/users/remove/{id}")
-	public String removeUser(@PathVariable int id)
-	{
-		userService.delete(id);
-		return "redirect:/users.html";	
-	}
+//	@RequestMapping(value="/users/remove/{id}")
+//	public String removeUser(@PathVariable int id)
+//	{
+//		userService.delete(id);
+//		return "redirect:/users.html";	
+//	}
 }
